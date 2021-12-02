@@ -1,7 +1,7 @@
-<h1> 註冊會員/Sign up </h1>
+<h1> 編輯密碼 </h1>
 
 
-<%= form_with model: @user, url: sign_up_path do |form|%>
+<%= form_with model: Current.user, url: password_path do |form|%>
   
   <% if form.object.errors.any?%>
     <div class="alert alert-danger">
@@ -13,10 +13,6 @@
 
 
   <div class="mb-3">
-    <%= form.label :email, "Email信箱", class: "form-label" %>
-    <%= form.text_field :email, class: "form-control", placeholder: "xxxx@email.com" %>
-  </div>
-  <div class="mb-3">
     <%= form.label :password, "密碼", class: "form-label" %>
     <%= form.password_field :password, class: "form-control", placeholder: "password" %>
   </div>
@@ -26,6 +22,6 @@
   </div>
 
   <div class="mb-3">
-    <%= form.submit "送出", class: "btn btn-primary" %>
+    <%= form.submit "更新密碼", class: "btn btn-primary" %>
   </div>
 <%end%>

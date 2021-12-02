@@ -12,10 +12,25 @@
             <li class="nav-item">
               <%= link_to "About", about_path, class: "nav-link"%>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
           </ul>
+
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <% if Current.user%>
+              <li class="nav-item">
+                <%= link_to Current.user.email, edit_password_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= button_to "登出", logout_path, method: :delete, class: "btn btn-primary" %>
+              </li>
+              <% else %>
+              <li class="nav-item">
+                <%= link_to "註冊", sign_up_path, class: "nav-link active" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "登入", sign_in_path, class: "nav-link active" %>
+              </li>
+            <%end%>
+
         </div>
       </div>
     </nav>
