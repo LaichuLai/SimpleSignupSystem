@@ -1,0 +1,14 @@
+<h1>忘記密碼？</h1>
+
+<%= form_with url: password_reset_path do |form|%>
+
+  <div class="mb-3">
+    <%= form.label :email, "Email信箱", class: "form-label" %>
+    <%= form.text_field :email, class: "form-control", placeholder: "xxxx@email.com" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "重設密碼", class: "btn btn-primary" %>
+  </div>
+
+<%end%>
